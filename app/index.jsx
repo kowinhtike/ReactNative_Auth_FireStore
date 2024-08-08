@@ -1,7 +1,7 @@
 import { StyleSheet, Text, Button, View } from "react-native";
 import React, { useState, useEffect } from "react";
 import { router } from "expo-router";
-import {auth} from "./firebase";
+import { auth } from "./firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -87,51 +87,58 @@ const index = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-      {user ? (
-        <>
-          <Button
-            title="Check Email Verification"
-            onPress={() => {
-              checkEmail();
-            }}
-          />
+        {user ? (
+          <>
+            <Button
+              title="Check Email Verification"
+              onPress={() => {
+                checkEmail();
+              }}
+            />
 
-          <Button
-            title="Go Home"
-            onPress={() => {
-              router.push("/projects")
-            }}
-          />
+            <Button
+              title="Go Home"
+              onPress={() => {
+                router.push("/projects");
+              }}
+            />
 
-          <Button
-            title="Logout"
-            onPress={() => {
-              handleLogout();
-            }}
-          />
-        </>
-      ) : (
-        <>
-          <Button
-            title="Create User"
-            onPress={() => {
-              handleRegister("iamwinhtike@gmail.com", "winner98");
-            }}
-          />
-          <Button
-            title="Login User"
-            onPress={() => {
-              handleLogin("iamwinhtike@gmail.com", "winner98");
-            }}
-          />
-          <Button
-            title="send password reset email"
-            onPress={() => {
-              forgotPassword();
-            }}
-          />
-        </>
-      )}
+            <Button
+              title="Test Storage"
+              onPress={() => {
+                router.push("/storage");
+              }}
+            />
+
+            <Button
+              title="Logout"
+              onPress={() => {
+                handleLogout();
+              }}
+            />
+          </>
+        ) : (
+          <>
+            <Button
+              title="Create User"
+              onPress={() => {
+                handleRegister("iamwinhtike@gmail.com", "winner98");
+              }}
+            />
+            <Button
+              title="Login User"
+              onPress={() => {
+                handleLogin("iamwinhtike@gmail.com", "winner98");
+              }}
+            />
+            <Button
+              title="send password reset email"
+              onPress={() => {
+                forgotPassword();
+              }}
+            />
+          </>
+        )}
       </View>
     </View>
   );
@@ -140,14 +147,14 @@ const index = () => {
 export default index;
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
-    alignItems:"center",
-    justifyContent:"center"
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
-  inputContainer:{
-    padding:8,
-    height:200,
-    justifyContent:"space-around"
-  }
+  inputContainer: {
+    padding: 8,
+    height: 200,
+    justifyContent: "space-around",
+  },
 });
